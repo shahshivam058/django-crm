@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <form  method="post">
+        {% csrf_token %}
+        {{ fromset.management_form }}
+        {% for form in  fromset %}
+            {{ form }}
+            <hr>
+        {% endfor %}
+
+        <button type="submit">Submit</button>
+    </form>
+{% endblock content %}
